@@ -1,12 +1,11 @@
 const boxes = document.querySelectorAll(".number-box");
 
-let sorted = false;
-
 for (const box of boxes) {
   const randomNumber = Math.floor(Math.random() * 1_000) + 1;
   box.innerHTML = String(randomNumber);
-  sorted = false;
 }
+
+let sorted = false;
 
 const sortButton = document.getElementById("sort-button");
 
@@ -14,6 +13,8 @@ sortButton?.addEventListener("click", async () => {
   if (sorted) {
     return;
   }
+
+  sorted = true;
 
   let swaps = 0;
 
@@ -68,8 +69,6 @@ sortButton?.addEventListener("click", async () => {
     "swaps-report"
   ) as HTMLParagraphElement;
   swapsReport.classList.remove("hidden");
-
-  sorted = true;
 });
 
 const rerollButton = document.getElementById("reroll-button");
@@ -78,8 +77,11 @@ rerollButton?.addEventListener("click", () => {
   for (const box of boxes) {
     const randomNumber = Math.floor(Math.random() * 1_000) + 1;
     box.innerHTML = String(randomNumber);
+
     sorted = false;
+
     box.classList.remove("bg-green-200");
+
     const swapsReport = document.getElementById(
       "swaps-report"
     ) as HTMLParagraphElement;
