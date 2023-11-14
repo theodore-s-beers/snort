@@ -66,7 +66,7 @@ sortButton?.addEventListener("click", async () => {
   swapsCount.innerText = String(swaps);
 
   const swapsReport = document.getElementById(
-    "swaps-report"
+    "swaps-report",
   ) as HTMLParagraphElement;
   swapsReport.classList.remove("hidden");
 });
@@ -83,7 +83,7 @@ rerollButton?.addEventListener("click", () => {
     box.classList.remove("bg-green-200");
 
     const swapsReport = document.getElementById(
-      "swaps-report"
+      "swaps-report",
     ) as HTMLParagraphElement;
     swapsReport.classList.add("hidden");
   }
