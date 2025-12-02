@@ -1,8 +1,5 @@
 {
-  "compilerOptions": {
-    "noEmit": true,
-    "strict": true,
-    "target": "ESNext"
-  },
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": { "noEmit": true },
   "files": ["script.ts"]
 }
